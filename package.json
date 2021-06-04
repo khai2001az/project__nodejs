@@ -10,9 +10,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
