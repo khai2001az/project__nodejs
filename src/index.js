@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const handlebars = require('express-handlebars')
 const path = require('path');
 const app = express();
-const port = 3000;
 
 //http logger
 app.use(morgan('combined'));
@@ -20,6 +19,8 @@ app.get('/', (req, res) => {
   res.render('home');
 })
 
-app.listen(port, () => {
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
