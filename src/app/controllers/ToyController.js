@@ -12,6 +12,21 @@ class ToyController {
         })
         .catch(next);
     }
+    //[GET]
+    create(req, res, next){         
+        res.render('toys/create');
+     }
+
+     //[POST]
+     store(req, res, next){         
+
+        const toy = new Toy(req.body);
+        toy.save()
+            .then(() => res.redirect('/'))
+            .catch(error =>{
+
+            });
+     }
 }
 
 module.exports = new ToyController();
