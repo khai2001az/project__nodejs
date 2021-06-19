@@ -5,6 +5,7 @@ const ToyController  = require('../app/controllers/ToyController');
 
 router.get('/create', ToyController.create);
 router.post('/store', ToyController.store);
+router.delete('/:id', ToyController.destroy); 
 router.get('/:slug', ToyController.show);
 
 

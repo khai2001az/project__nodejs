@@ -1,0 +1,76 @@
+<div class="mt-4">
+  <h3>My Toys</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name Toy</th>
+        <th scope="col">Cost</th>
+        <th scope="col">Time create</th>
+        <th scope="col"><a href="/toys/create">Create</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each toys}}
+      <tr>
+        <th scope="row">{{@index}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.cost}}</td>
+        <td>{{this.createAt}}</td>
+        <td>
+          <button type="button" data-id="{{this._id}}" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#deleteToys">
+            Delete
+          </button>
+        </td>
+
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div id="deleteToys" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete this Toy?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id="btn-delete-toys">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <form method="POST" name="deleteForm"></form>
+
+<script>
+
+  document.addEventListener('DOMContenLoaded', function () {
+
+    var toyID;
+    var deleteForm = document.forms('deleteForm');
+
+    $('#deleteToys').on('show.bs.model', function (event) {
+      var button = $(event.relatedTarget);
+      toyID = button.data('id');
+      console.log(toyID)
+    });
+
+    var btnDeletetoys = document.getElementById('btn-delete-toys');
+    console.log(btnDeletetoys);
+    btnDeletetoys.onclick = function () {
+      alert(toyID);
+      deleteForm.action= '/toys/' + toyID + '?_method=DELETE';
+    }
+
+  });
+
+</script>
