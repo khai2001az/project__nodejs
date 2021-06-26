@@ -28,10 +28,10 @@ class ToyController {
             });
      }
 
-     destroy(req, res, next){
+     delete(req, res, next){
         Toy.deleteOne({ _id: req.params.id })
         .then(()=>res.redirect('back'))
-        .catch(next)
+        .catch(next);
      }
 }
 

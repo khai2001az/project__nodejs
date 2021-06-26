@@ -18,10 +18,7 @@
         <td>{{this.cost}}</td>
         <td>{{this.createAt}}</td>
         <td>
-          <button type="button" data-id="{{this._id}}" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#deleteToys">
-            Delete
-          </button>
+          <button type="button" data-id="{{this._id}}" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-toy-model"> Delete </button>
         </td>
 
       </tr>
@@ -31,8 +28,7 @@
 </div>
 
 <!-- Modal -->
-<div id="deleteToys" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div id="delete-toy-model" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -49,28 +45,24 @@
     </div>
   </div>
 </div>
-  <form method="POST" name="deleteForm"></form>
+<form method="POST" name="deleteForm"></form>
+
 
 <script>
-
-  document.addEventListener('DOMContenLoaded', function () {
-
+  document.addEventListener('DOMContentLoaded', function () {
     var toyID;
-    var deleteForm = document.forms('deleteForm');
-
-    $('#deleteToys').on('show.bs.model', function (event) {
+    var deleteForm = document.forms['deleteForm'];
+    var btnDeletetoys = document.getElementById('btn-delete-toys');
+    $('#delete-toy-model').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);
       toyID = button.data('id');
-      console.log(toyID)
     });
 
-    var btnDeletetoys = document.getElementById('btn-delete-toys');
-    console.log(btnDeletetoys);
     btnDeletetoys.onclick = function () {
-      alert(toyID);
-      deleteForm.action= '/toys/' + toyID + '?_method=DELETE';
+      deleteForm.action = '/toys/' + toyID + '?_method=DELETE';
+      deleteForm.submit();
     }
 
   });
-
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
