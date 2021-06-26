@@ -1,19 +1,20 @@
 <div class="mt-4">
     <div class="row">
         {{#each toys}}
-        <div class="col-sm-6 col-lg-3">
-            <div class="card">
+        <div class="col-sm-6 col-lg-3" style="margin-bottom: 25px;">
+            <div class="card" style="">
                 <a href="/toys/{{this.slug}}">
-                    <img src="{{this.img}}" class="card-img-top">
+                    <img src="{{this.img}}" class="card-img-top" style="min-height: 400px;">
                 </a>
 
                 <div class="card-body">
-                    <a href="/toys/{{this.slug}}">
+                    <a href="/toys/{{this.slug}}" style="color: #000;">
                         <h5 class="card-title">{{this.name}}</h5>
                     </a>
 
                     <p class="card-text">{{this.description}}</p>
-                    <a href="/toys/{{this.slug}}"><a href="#" class="btn btn-primary">Buy</a></a>
+                    <a href="/toys/{{this.slug}}" class="btn btn-primary" style="margin-left:39%;"> Buy</a>
+                    
 
                 </div>
             </div>

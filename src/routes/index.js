@@ -1,4 +1,4 @@
-const newsRouter = require('./news');
+
 const meRouter = require('./me');
 const toysRouter = require('./toys');
 const siteRouter = require('./site');
