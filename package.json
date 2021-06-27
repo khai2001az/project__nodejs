@@ -11,7 +11,7 @@
     "jquery": "^3.6.0",
     "lint-staged": "^11.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^2.2.12",
+    "mongoose": "^2.9.10",
     "mongoose-slug-generator": "^1.0.4",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
