@@ -10,7 +10,7 @@ const methodOverride = require('method-override');
 const route = require('./routes');
 const db = require('./config/db')
 
-
+var mongoose = require('./mongoconnection');
 app.use(methodOverride('_method'));
 //connect to db
 db.connect();
