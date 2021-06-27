@@ -24,18 +24,15 @@
     "watch": "node-sass --watch src/resource/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "nodejs"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khai2001az/project__nodejs.git"
+  },
   "author": "khai",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/khai2001az/project__nodejs/issues"
   },
   "homepage": "https://github.com/khai2001az/project__nodejs#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/khai2001az/Project_ASS2.git"
-  },
   "description": ""
 }
